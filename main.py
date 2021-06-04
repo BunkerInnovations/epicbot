@@ -102,4 +102,13 @@ def radio(event):
         response = requests.get("http://phrl42.ydns.eu:8000/")
         tree = fromstring(response.content)
         bot.msg(event.chat, "Currently playing: " + tree.xpath("/html/body/div[2]/div[2]/table/tbody/tr[9]/td[2]")[0].text)
+
+@bot.trigger(lambda event: event.MSG and event.msg.startswith("$price"))
+def radio(event):
+        if len(event.msg.split()) < 2:
+            bot.msg(event.chat, f"Missing cryptocurrency name")
+        else:
+            response = requests.get("https://rate.sx/1" + event.msg.split()[1])
+            bot.msg(event.chat, f"Price for 1 {event.msg.split()[1]}: {response.text.split()[0]}$")
+
 bot.connect()

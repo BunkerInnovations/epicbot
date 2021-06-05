@@ -108,7 +108,7 @@ def radio(event):
         bot.msg(event.chat, "Currently playing: " + tree.xpath("/html/body/div[2]/div[2]/table/tbody/tr[9]/td[2]")[0].text)
 
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$price"))
-def radio(event):
+def price(event):
         if len(event.msg.split()) < 2:
             bot.msg(event.chat, f"Missing cryptocurrency name")
         else:

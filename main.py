@@ -127,22 +127,5 @@ def furim(event):
 def abbix(event):
      bot.msg(event.chat, f"haha noob, I use scheme to take over the world...")
 
-@bot.trigger(lambda event: event.MSG and event.msg.startswith("$seconds"))
-def seconds(event):
-    if len(event.msg.split()) < 2:
-        bot.msg(event.chat, f"How many seconds?")
-    else:
-        #bot.msg(event.chat, f"Waiting {event.msg.split()[1]} seconds...")
-        t_seconds = event.msg.split()[1]
-        int(t_seconds)
-        bot.msg(event.chat, f"Waiting {t_seconds} seconds...")
-                            #this doesnt work because I am retarded ff f f f         
-        count = 0
-        while count:
-            time.sleep(1)
-            count =+ 1 
-
-            if count >= t_seconds:
-                bot.msg(event.chat, f"{event.nick}: Time's up")
                 
 bot.connect()

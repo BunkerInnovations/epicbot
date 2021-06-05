@@ -113,7 +113,10 @@ def price(event):
             bot.msg(event.chat, f"Missing cryptocurrency name")
         else:
             response = requests.get("https://rate.sx/1" + event.msg.split()[1])
-            bot.msg(event.chat, f"Price for 1 {event.msg.split()[1]}: {response.text.split()[0]}$")
+            if response.text.split()[0] != "ERROR":
+                bot.msg(event.chat, f"Price for 1 {event.msg.split()[1]}: {response.text.split()[0]}$")
+            else:
+                bot.msg(event.chat, "An error occured, maybe you made a typo?")
 
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$rnb"))
 def rnb(event):

@@ -57,9 +57,9 @@ def crack(event):
         name = event.msg.split()[1]
         emails = ["ilovepokimane@gamil.com", "idolmaster1337@gmail.com", "trole404@trole.net", "ducomerdeintoschiebe@waifu.club",
                   "theabbixaretheprogrammer@cock.li", "jetztgaslos@gmx.de", "maxiloveshamradio1357@kampfwagen.de",
-                  "stallmanhasanicebeard@yes.com", "imahipster@riseup.net", "plsdontsellmydata@facebook.com"]
+                  "stallmanhasanicebeard@yes.com", "imahipster@riseup.net", "plsdontsellmydata@facebook.com", "TimCooks@gmail.com", "BillGates@icloud.com", "idolmaster696969420@panzerimfwagen.bruh"]
         passwords = ["isimpforstallman", "panzermaster42", "meinefrauistmeineschwester", "ahyes", "rnbubuntuuser", "********",
-                     "etorliebejunges1337404", "epsteindidnothingwrong", "cremedelacremeducomerde"]
+                     "etorliebejunges1337404", "epsteindidnothingwrong", "cremedelacremeducomerde", "ilovefacebook!", "revoxsux", "sosussy", "revoxsus"]
     
         bot.msg(event.chat, f"Cracking into {name}'s computer...")   
         bot.msg(event.chat, f"Got email {random.choice(emails)}...")

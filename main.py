@@ -5,6 +5,7 @@ import requests
 import os
 from lxml.html import fromstring
 import re
+import time
 
 # IRC Config
 bot = ircutil.Connection()
@@ -54,8 +55,11 @@ def crack(event):
         bot.msg(event.chat, f"Please specify who to crack!")
     else:
         name = event.msg.split()[1]
-        emails = ["ilovepokimane@gamil.com", "stallmanhasanicebeard@yes.com", "imahipster@riseup.net", "plsdontsellmydata@facebook.com"]
-        passwords = ["isimpforstallman", "panzermaster42", "meinefrauistmeineschwester", "ahyes", "epsteindidnothingwrong"]
+        emails = ["ilovepokimane@gamil.com", "idolmaster1337@gmail.com", "trole404@trole.net", "ducomerdeintoschiebe@waifu.club",
+                  "theabbixaretheprogrammer@cock.li", "jetztgaslos@gmx.de", "maxiloveshamradio1357@kampfwagen.de",
+                  "stallmanhasanicebeard@yes.com", "imahipster@riseup.net", "plsdontsellmydata@facebook.com"]
+        passwords = ["isimpforstallman", "panzermaster42", "meinefrauistmeineschwester", "ahyes", "rnbubuntuuser", "********",
+                     "etorliebejunges1337404", "epsteindidnothingwrong", "cremedelacremeducomerde"]
     
         bot.msg(event.chat, f"Cracking into {name}'s computer...")   
         bot.msg(event.chat, f"Got email {random.choice(emails)}...")
@@ -111,4 +115,34 @@ def radio(event):
             response = requests.get("https://rate.sx/1" + event.msg.split()[1])
             bot.msg(event.chat, f"Price for 1 {event.msg.split()[1]}: {response.text.split()[0]}$")
 
+@bot.trigger(lambda event: event.MSG and event.msg.startswith("$rnb"))
+def rnb(event):
+    bot.msg(event.chat, f"rnb torrenting waifu material...")
+
+@bot.trigger(lambda event: event.MSG and event.msg.startswith("$furim"))
+def furim(event):
+     bot.msg(event.chat, f"Are the Abbix the programmer of the linus kernal? xD Imma duco merde into schiebe")
+
+@bot.trigger(lambda event: event.MSG and event.msg.startswith("$abbix"))
+def abbix(event):
+     bot.msg(event.chat, f"haha noob, I use scheme to take over the world...")
+
+@bot.trigger(lambda event: event.MSG and event.msg.startswith("$seconds"))
+def seconds(event):
+    if len(event.msg.split()) < 2:
+        bot.msg(event.chat, f"How many seconds?")
+    else:
+        #bot.msg(event.chat, f"Waiting {event.msg.split()[1]} seconds...")
+        t_seconds = event.msg.split()[1]
+        int(t_seconds)
+        bot.msg(event.chat, f"Waiting {t_seconds} seconds...")
+                            #this doesnt work because I am retarded ff f f f         
+        count = 0
+        while count:
+            time.sleep(1)
+            count =+ 1 
+
+            if count >= t_seconds:
+                bot.msg(event.chat, f"{event.nick}: Time's up")
+                
 bot.connect()

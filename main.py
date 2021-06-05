@@ -129,6 +129,10 @@ def furim(event):
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$abbix"))
 def abbix(event):
      bot.msg(event.chat, f"haha noob, I use scheme to take over the world...")
+        
+        @bot.trigger(lambda event: event.MSG and event.msg.startswith("$idotmaster1"))
+def idotmaster1(event):
+    bot.msg(event.chat, f"haha idolmaster XDXDXDXD so funni!!!!")
 
                 
 bot.connect()

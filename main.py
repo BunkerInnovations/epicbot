@@ -78,7 +78,7 @@ def cancel(event):
         bot.msg(event.chat, f"{event.msg.split()[1]} got cancelled...")
 
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$choose"))
-def cancel(event):  
+def choose(event):  
     if not "," in event.msg:
         bot.msg(event.chat, f"Please send multiple choices separated by a comma (',')")
     else:

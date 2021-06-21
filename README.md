@@ -1,3 +1,3 @@
 # epicbot
-Our epic IRC bot
-(its epic)
+Our epic IRC bot written in python
+(it is epic)

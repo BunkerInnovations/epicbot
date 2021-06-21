@@ -9,7 +9,7 @@ import time
 
 # IRC Config
 bot = ircutil.Connection()
-bot.server = "q6dncw3mcqi57ehai5euozx3ypcg5av36fgegjtngemux4iulddhuqid.onion:6667"
+bot.server = "127.0.0.1:6667"
 bot.nick = "epicbot"
 bot.hostname = "epicbot"
 bot.servername = "epicbot"
@@ -21,7 +21,7 @@ random.seed(datetime.now().second)
 @bot.trigger("WELCOME")
 def autojoin(event):
     print("Bot is running")
-    bot.join('#test')
+    bot.join('#general-shitcord')
     
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$hi"))
 def hi(event):
@@ -121,6 +121,11 @@ def price(event):
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$rnb"))
 def rnb(event):
     bot.msg(event.chat, f"rnb torrenting waifu material...")
+
+@bot.trigger(lambda event: event.MSG and event.msg.startswith("$phrl"))
+def phrl(event):
+    bot.msg(event.chat, f"phrl loves otaku culture!")
+
 
 @bot.trigger(lambda event: event.MSG and event.msg.startswith("$furim"))
 def furim(event):
